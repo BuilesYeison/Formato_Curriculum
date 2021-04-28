@@ -1,0 +1,19 @@
+header{
+    width: 100%;
+    min-height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media screen and(max-width:690px) {
+    header{
+        padding: 20px;
+        width: 90%;
+        margin: auto;
+        flex-direction: column;
+        h1{
+            text-align: center;
+        }
+    }
+}

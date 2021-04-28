@@ -1,0 +1,32 @@
+<main class="principal">
+  <form [formGroup]="userInfoForm">
+    <h2>Registra esta información porfavor:</h2>
+    <div class="input-group input-group-sm mb-3">
+      <input type="text" class="form-control" name="name" placeholder="Nombres y Apellidos" formControlName="name">
+      <span *ngIf="f.name.errors?.required && f.name.touched" class="error">Este campo es requerido</span>
+      <span *ngIf="f.name.errors?.pattern" class="error">Este nombre no es valido</span>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <input type="text" class="form-control" name="ID" placeholder="Documento de identidad" formControlName="ID">
+      <span *ngIf="f.ID.errors?.required && f.ID.touched" class="error">Este campo es requerido</span>
+      <span *ngIf="f.ID.errors?.pattern" class="error">Este documento no es valido</span>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <input type="text" class="form-control" name="cargo" placeholder="Cargo en la empresa" formControlName="cargo">
+      <span *ngIf="f.ID.errors?.required && f.ID.touched" class="error">Este campo es requerido</span>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <input type="text" class="form-control" name="TP" placeholder="Tarjeta profesional" formControlName="TP">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <input type="text" class="form-control" name="date" placeholder="Año de vinculación de la empresa" formControlName="date">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <label for="dateUpdate" class="form-label">Fecha de actualización: </label>
+      <input type="date" class="form-control" name="dateUpdate" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" formControlName="dateUpdate">
+    </div>
+    <div *ngIf="!this.f.name.errors?.required && !this.f.name.errors?.pattern && !this.f.ID.errors?.required && !this.f.ID.errors?.pattern && !this.f.ID.errors?.maxLength && !this.f.ID.errors?.minLength && !this.f.cargo.errors?.required" class="continue">
+      <p>¡Hola {{getUsername()}}!Ya puedes continuar con el formulario.</p>
+    </div>
+  </form>
+</main>
