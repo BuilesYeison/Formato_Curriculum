@@ -1,19 +1,28 @@
 header{
-    width: 100%;
+    max-width: 100vw;
     min-height: fit-content;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    background-color: rgb(101, 173, 101);
+    .content{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        h1{
+            color: #fefefe;
+        }
+    }
 }
 
 @media screen and(max-width:690px) {
     header{
-        padding: 20px;
-        width: 90%;
-        margin: auto;
+        .content{
+            padding: 20px;
+        
         flex-direction: column;
         h1{
             text-align: center;
+        }
         }
     }
 }
