@@ -1,0 +1,37 @@
+<div class="complementary">
+    <h3>Capacitación recibida - Estudios complementarios</h3>
+    <form #compForm="ngForm">
+        <div class="input-group input-group-sm ">
+          <input type="text" class="form-control" name="place" placeholder="Establecimiento" formControlName="place">
+        </div>
+        <div class="input-group input-group-sm ">
+          <input type="number" class="form-control" name="duration" placeholder="Duración" formControlName="duration">
+        </div>
+        <div class="input-group input-group-sm ">
+          <input type="text" class="form-control" name="year" placeholder="Año de finalización" formControlName="year">
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Descripción" name="description" formControlName="description" style="height: 140px"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success btn-sm">Agregar</button>
+      </form>
+      <div class="cards">
+        <div  class="card text-white bg-success mb-3" style="min-width: 18rem;">
+          <div class="card-header"><span class="title"></span><span class="delete-item">x</span></div>
+          <div class="card-body">
+            <div class="info-item mb-1">
+                <p class="title">Lugar: </p>
+                <p class="item"></p>
+            </div>
+            <div class="info-item mb-1">
+                <p class="title">Año: </p>
+                <p class="item"></p>
+            </div>
+            <div class="info-item mb-1">
+                <p class="title">Duración: </p>
+                <p class="item"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

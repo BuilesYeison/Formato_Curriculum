@@ -1,4 +1,10 @@
-form {
+.principal-form{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  form {
     padding: 20px;
     width: 50%;
   h2 {
@@ -24,9 +30,12 @@ form {
     }
   }
 }
+}
 
 @media screen and(max-width:610px){
-  form{
-      width: 90%;
+  .principal-form{
+    form{
+      width: 100%;
+  }
   }
 }

@@ -20,7 +20,7 @@ export class AcademicComponent implements OnInit {
   }
   deleteItem(item:any):void{//delete item when char x is pressed in the header
     for(let i = 0;i<this.academicInfo.length;i++){
-      if(this.academicInfo[i].title === item.title){
+      if(this.academicInfo[i].title === item.title){//get the object that the title is equal to selected item that will delete
         this.academicInfo.splice(i,1);
       }
     }

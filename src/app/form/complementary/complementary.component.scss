@@ -1,4 +1,4 @@
-.academic-info{
+.complementary{
     width: 95vw;
     min-height: 100vh;
     padding: 50px 0;
@@ -21,6 +21,11 @@
                 font-size: 0.7em;
                 color: rgb(212, 104, 104);
               }
+        }
+        .form-floating{
+            grid-row-start: 1;
+            grid-row-end: 4;
+            grid-column-start:2 ;
         }
         button{
             grid-column-start: 1;
@@ -57,26 +62,6 @@
         }
         .card:hover{
             transform: scale(1.1);
-        }
-    }
-}
-@media screen and (max-width:1200px) {
-    .academic-info{
-        form{
-            width: 90%;
-        }
-        .cards{
-            grid-template-columns: repeat(2,1fr);
-        }
-    }
-}
-@media screen and (max-width:710px) {
-    .academic-info{
-        form{
-            width: 90%;
-        }
-        .cards{
-            grid-template-columns: repeat(1,1fr);
         }
     }
 }
