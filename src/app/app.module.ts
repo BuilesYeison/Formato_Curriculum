@@ -10,6 +10,7 @@ import { FormComponent } from './form/form.component';
 import { CertificacionesComponent } from './form/certificaciones/certificaciones.component';
 import { AcademicComponent } from './form/academic/academic.component';
 import { ComplementaryComponent } from './form/complementary/complementary.component';
+import { ExperienceComponent } from './form/experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ComplementaryComponent } from './form/complementary/complementary.compo
     FormComponent,
     CertificacionesComponent,
     AcademicComponent,
-    ComplementaryComponent
+    ComplementaryComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,

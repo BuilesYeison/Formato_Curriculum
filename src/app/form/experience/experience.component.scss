@@ -1,4 +1,4 @@
-.complementary{
+.experience{
     width: 95vw;
     min-height: 100vh;
     padding: 50px 0;
@@ -17,21 +17,15 @@
             input{
                 width: 100%;
             }
-            
-        }
-        .error {
-            font-size: 0.7em;
-            color: rgb(212, 104, 104);
-          }
-        .form-floating{
-            grid-row-start: 1;
-            grid-row-end: 4;
-            grid-column-start:2 ;
         }
         button{
             grid-column-start: 1;
             grid-column-end: 3;
         }
+        .error {
+            font-size: 0.7em;
+            color: rgb(212, 104, 104);
+          }
     }
     .cards{
         display: grid;
@@ -66,7 +60,7 @@
     }
 }
 @media screen and (max-width:1200px) {
-    .complementary{
+    .experience{
         form{
             width: 90%;
         }
@@ -76,7 +70,7 @@
     }
 }
 @media screen and (max-width:710px) {
-    .complementary{
+    .experience{
         form{
             width: 90%;
         }
