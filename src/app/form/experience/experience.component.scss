@@ -2,6 +2,7 @@
     width: 95vw;
     min-height: 100vh;
     padding: 50px 0;
+    border: 1px solid;
     h3{
         text-align: center;
     }
@@ -72,7 +73,12 @@
 @media screen and (max-width:710px) {
     .experience{
         form{
-            width: 90%;
+            width: 100%;
+            grid-template-columns: repeat(1,1fr);
+            button{
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
         }
         .cards{
             grid-template-columns: repeat(1,1fr);
