@@ -17,6 +17,13 @@ export class ComplementaryComponent implements OnInit {
   pushItem():void{
     this.complementary.push(this.complementaryForm.value);
   }
+  deleteItem(item:any){
+    for(let i = 0;i<this.complementary.length;i++){
+      if(this.complementary[i].place === item.place){
+        this.complementary.splice(i,1);
+      }
+    }
+  }
   get f(){return this.complementaryForm.controls}
   ngOnInit(): void {
   }
