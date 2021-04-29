@@ -17,11 +17,12 @@
             input{
                 width: 100%;
             }
-            .error {
-                font-size: 0.7em;
-                color: rgb(212, 104, 104);
-              }
+            
         }
+        .error {
+            font-size: 0.7em;
+            color: rgb(212, 104, 104);
+          }
         .form-floating{
             grid-row-start: 1;
             grid-row-end: 4;
