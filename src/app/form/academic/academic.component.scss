@@ -1,0 +1,30 @@
+.academic-info{
+    border: 1px solid;
+    width: 95vw;
+    min-height: 50vh;
+    padding: 50px 0;
+    h3{
+        text-align: center;
+    }
+    form{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1.5em;
+        width: 50%;
+        margin: 0 auto;
+        .input-group{
+            display: block;
+            input{
+                width: 100%;
+            }
+            .error {
+                font-size: 0.7em;
+                color: rgb(212, 104, 104);
+              }
+        }
+        button{
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+}

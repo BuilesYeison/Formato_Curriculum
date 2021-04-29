@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormComponent } from './form/form.component';
 import { CertificacionesComponent } from './form/certificaciones/certificaciones.component';
+import { AcademicComponent } from './form/academic/academic.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CertificacionesComponent } from './form/certificaciones/certificaciones
     HeaderComponent,
     FooterComponent,
     FormComponent,
-    CertificacionesComponent
+    CertificacionesComponent,
+    AcademicComponent
   ],
   imports: [
     BrowserModule,

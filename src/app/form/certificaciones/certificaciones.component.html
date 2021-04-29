@@ -1,6 +1,6 @@
 <div class="certificaciones">
   <h3 class="mb-3">Certificaciones:</h3>
-  <form [formGroup]="certificadosForm" (ngSubmit)="pushCertificado()" class="certificaciones-form">
+  <form #certForm="ngForm" [formGroup]="certificadosForm" (ngSubmit)="pushCertificado()" class="certificaciones-form">
     <div class="input-group input-group-sm mb-3">
       <input type="text" class="form-control" name="certificado" placeholder="Certificado"
         formControlName="certificado">
@@ -11,7 +11,7 @@
       <span class="error" *ngIf="f.year.errors?.required && f.year.touched">Requerido</span>
       <span class="error" *ngIf="f.year.errors?.pattern">Solo se permite año</span>
     </div>
-    <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+    <button [disabled]="certForm.invalid" type="submit" class="btn btn-success btn-sm">Agregar</button>
   </form>
   <div class="card">
     <ul class="list-group list-group-flush">

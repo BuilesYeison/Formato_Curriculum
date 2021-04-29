@@ -1,0 +1,24 @@
+<section class="academic-info">
+  <h3 class="mb-3">Información academica:</h3>
+  <form #acaForm="ngForm" [formGroup]="academicForm" (ngSubmit)="pushItem()">
+    <div class="input-group input-group-sm ">
+      <input type="text" class="form-control" name="place" placeholder="Establecimiento" formControlName="place">
+      <span *ngIf="f.place.errors?.required && f.place.touched" class="error">El campo es requerido</span>
+    </div>
+    <div class="input-group input-group-sm ">
+      <input type="number" class="form-control" name="duration" placeholder="Duración" formControlName="duration">
+      <span *ngIf="f.duration.errors?.required && f.duration.touched" class="error">El campo es requerido</span>
+      <span *ngIf="f.place.errors?.pattern" class="error">El formato es incorrecto</span>
+    </div>
+    <div class="input-group input-group-sm ">
+      <input type="text" class="form-control" name="year" placeholder="Año de grado" formControlName="year">
+      <span *ngIf="f.year.errors?.required && f.year.touched" class="error">El campo es requerido</span>
+      <span *ngIf="f.year.errors?.pattern" class="error">El formato es incorrecto</span>
+    </div>
+    <div class="input-group input-group-sm ">
+      <input type="text" class="form-control" name="title" placeholder="Titulo obtenido" formControlName="title">
+      <span *ngIf="f.title.errors?.required && f.title.touched" class="error">El campo es requerido</span>
+    </div>
+    <button [disabled]="acaForm.invalid" type="submit" class="btn btn-success btn-sm">Agregar</button>
+  </form>
+</section>
