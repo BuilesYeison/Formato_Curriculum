@@ -35,7 +35,7 @@
       </div>
     </form>
   </div>
-  <div *ngIf="mainForm.invalid" class="forms">
+  <div *ngIf="!mainForm.invalid" class="forms">
     <app-certificaciones></app-certificaciones>
     <app-academic></app-academic>
     <app-complementary></app-complementary>
