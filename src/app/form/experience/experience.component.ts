@@ -12,15 +12,23 @@ export class ExperienceComponent implements OnInit {
   dateFinishModel!: NgbDateStruct; //for bootstrap datepicker
   experiences:any = [];
   experiencesForm = new FormGroup({
-    company:new FormControl(""),
-    job:new FormControl(""),
-    dateInit:new FormControl(""),
-    dateFinish: new FormControl("")
+    company:new FormControl("",[Validators.required]),
+    job:new FormControl("",[Validators.required]),
+    dateInit:new FormControl("",[Validators.required]),
+    dateFinish: new FormControl("",[Validators.required])
   });
   pushItem():void{
     this.experiences.push(this.experiencesForm.value)
     console.log(this.experiences)
   }
+  deleteItem(item:any){
+    for(let i = 0; i<this.experiences.length;i++){
+      if(this.experiences[i].company === item.company){
+        this.experiences.splice(i,1);
+      }
+    }
+  }
+  get f(){return this.experiencesForm.controls}
   ngOnInit(): void {
   }
 
