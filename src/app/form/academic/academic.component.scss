@@ -8,6 +8,7 @@
     }
     form{
         display: grid;
+        padding: 15px 0;
         grid-template-columns: repeat(2,1fr);
         gap: 1.5em;
         width: 50%;
@@ -25,6 +26,39 @@
         button{
             grid-column-start: 1;
             grid-column-end: 3;
+        }
+    }
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1em;
+        .card{
+            align-self: center;
+            justify-self: center;
+            transition: all 0.2s;
+            .card-header{
+                display: flex;
+                justify-content: space-between;
+                align-items:center ;
+                font-weight: 600;
+                .delete-item{
+                    cursor: pointer;
+                    font-size: 1.2em;
+                }
+                .title{
+                    max-width: 80%;
+                }
+            }
+            .card-body{
+                .info-item{
+                    display: flex;
+                    .title{font-weight: 500;}
+                }
+            }
+            
+        }
+        .card:hover{
+            transform: scale(1.1);
         }
     }
 }

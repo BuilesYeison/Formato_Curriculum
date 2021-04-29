@@ -21,4 +21,23 @@
     </div>
     <button [disabled]="acaForm.invalid" type="submit" class="btn btn-success btn-sm">Agregar</button>
   </form>
+  <div class="cards">
+    <div *ngFor="let item of academicInfo" class="card text-white bg-success mb-3" style="min-width: 18rem;">
+      <div class="card-header"><span class="title">{{item.title}}</span><span class="delete-item">x</span></div>
+      <div class="card-body">
+        <div class="info-item mb-1">
+            <p class="title">Lugar: </p>
+            <p class="item">{{item.place}}</p>
+        </div>
+        <div class="info-item mb-1">
+            <p class="title">Año: </p>
+            <p class="item">{{item.year}}</p>
+        </div>
+        <div class="info-item mb-1">
+            <p class="title">Duración: </p>
+            <p class="item">{{item.duration}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
