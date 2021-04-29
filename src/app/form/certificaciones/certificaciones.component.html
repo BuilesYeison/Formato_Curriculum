@@ -1,1 +1,22 @@
-<p>certificaciones works!</p>
+<div class="certificaciones">
+  <h3 class="mb-3">Certificaciones:</h3>
+  <form [formGroup]="certificadosForm" (ngSubmit)="pushCertificado()" class="certificaciones-form">
+    <div class="input-group input-group-sm mb-3">
+      <input type="text" class="form-control" name="certificado" placeholder="Certificado"
+        formControlName="certificado">
+      <span class="error" *ngIf="f.certificado.errors?.required && f.certificado.touched">Requerido</span>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <input type="text" class="form-control" name="year" placeholder="Año" formControlName="year">
+      <span class="error" *ngIf="f.year.errors?.required && f.year.touched">Requerido</span>
+      <span class="error" *ngIf="f.year.errors?.pattern">Solo se permite año</span>
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+  </form>
+  <div class="card">
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of certificados" class="list-group-item"><span class="item-info">{{item.certificado}} /
+          {{item.year}}</span><span (click)="deleteItem(item)" class="delete-item">x</span> </li>
+    </ul>
+  </div>
+</div>
