@@ -35,10 +35,13 @@
       </div>
     </form>
   </div>
-  <div *ngIf="!mainForm.invalid" class="forms">
+  <div *ngIf="mainForm.invalid" class="forms">
     <app-certificaciones></app-certificaciones>
     <app-academic></app-academic>
     <app-complementary></app-complementary>
     <app-experience></app-experience>
+    <div class="send-form">
+      <button (click)="sendData()" type="button" class="btn btn-success">Enviar</button>
+    </div>
   </div>
 </main>
