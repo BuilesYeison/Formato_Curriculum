@@ -36,7 +36,7 @@
       </div>
     </form>
   </div>
-  <div *ngIf="mainForm.invalid" class="forms">
+  <div *ngIf="!mainForm.invalid" class="forms">
     <app-certificaciones (pushCertData)="pushCertData($event)"></app-certificaciones>
     <app-academic (pushAcademicData)="pushAcademicData($event)"></app-academic>
     <app-complementary (pushCompleData)="pushCompleData($event)"></app-complementary>
