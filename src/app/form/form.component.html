@@ -22,6 +22,7 @@
       <div class="input-group input-group-sm mb-3">
         <input type="text" class="form-control" name="date" placeholder="Año de vinculación de la empresa"
           formControlName="date">
+          <span *ngIf="f.date.errors?.pattern && f.date.touched" class="error">Formato incorrecto</span>
       </div>
       <div class="input-group input-group-sm mb-3">
         <label for="dateUpdate" class="form-label">Fecha de actualización: </label>
@@ -35,7 +36,7 @@
       </div>
     </form>
   </div>
-  <div *ngIf="!mainForm.invalid" class="forms">
+  <div *ngIf="mainForm.invalid" class="forms">
     <app-certificaciones (pushCertData)="pushCertData($event)"></app-certificaciones>
     <app-academic (pushAcademicData)="pushAcademicData($event)"></app-academic>
     <app-complementary (pushCompleData)="pushCompleData($event)"></app-complementary>

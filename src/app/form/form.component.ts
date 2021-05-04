@@ -20,7 +20,7 @@ export class FormComponent implements OnInit {
     ID:new FormControl("",[Validators.required,Validators.pattern("[0-9]*"),Validators.maxLength(10),Validators.minLength(5)]),
     cargo:new FormControl("", [Validators.required]),
     TP:new FormControl(""),
-    date:new FormControl(""),
+    date:new FormControl("",[Validators.pattern("[0-9]{4}")]),
     dateUpdate:new FormControl("")
   });
   pushExperienceData(data:any):void{this.experiences.push(data)}//get from child components user info

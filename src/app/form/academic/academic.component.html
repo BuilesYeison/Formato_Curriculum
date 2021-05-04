@@ -6,7 +6,7 @@
       <span *ngIf="f.place.errors?.required && f.place.touched" class="error">El campo es requerido</span>
     </div>
     <div class="input-group input-group-sm ">
-      <input type="number" class="form-control" name="duration" placeholder="Duración" formControlName="duration">
+      <input type="number" class="form-control" name="duration" placeholder="Duración (horas)" formControlName="duration">
       <span *ngIf="f.duration.errors?.required && f.duration.touched" class="error">El campo es requerido</span>
       <span *ngIf="f.place.errors?.pattern" class="error">El formato es incorrecto</span>
     </div>
