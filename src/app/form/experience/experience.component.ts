@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {FormGroup, FormControl, Validators} from "@angular/forms"
-import {GetuserinfoService} from '../getuserinfo.service'
 
 @Component({
   selector: 'app-experience',
@@ -12,7 +11,7 @@ export class ExperienceComponent implements OnInit {
   dateInitModel!: NgbDateStruct; //for bootstrap datepicker
   dateFinishModel!: NgbDateStruct; //for bootstrap datepicker
   experiences:any = [];
-  getUserInfoService = new GetuserinfoService;
+  @Output() pushExperienceData:EventEmitter<any>=new EventEmitter();
   experiencesForm = new FormGroup({
     company:new FormControl("",[Validators.required]),
     job:new FormControl("",[Validators.required]),
@@ -21,7 +20,7 @@ export class ExperienceComponent implements OnInit {
   });
   pushItem():void{
     this.experiences.push(this.experiencesForm.value);
-    this.getUserInfoService.pushExperience(this.experiences);
+    this.pushExperienceData.emit(this.experiences)
   }
   deleteItem(item:any){
     for(let i = 0; i<this.experiences.length;i++){

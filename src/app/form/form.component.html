@@ -36,12 +36,12 @@
     </form>
   </div>
   <div *ngIf="!mainForm.invalid" class="forms">
-    <app-certificaciones></app-certificaciones>
-    <app-academic></app-academic>
-    <app-complementary></app-complementary>
-    <app-experience></app-experience>
+    <app-certificaciones (pushCertData)="pushCertData($event)"></app-certificaciones>
+    <app-academic (pushAcademicData)="pushAcademicData($event)"></app-academic>
+    <app-complementary (pushCompleData)="pushCompleData($event)"></app-complementary>
+    <app-experience (pushExperienceData)="pushExperienceData($event)"></app-experience>
     <div class="send-form">
-      <button (click)="sendData()" type="button" class="btn btn-success">Enviar</button>
+      <button (click)="sendData()" [disabled]="disabledButton()" type="button" class="btn btn-success">Enviar</button>
     </div>
   </div>
 </main>
