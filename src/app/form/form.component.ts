@@ -11,6 +11,7 @@ import {GetuserinfoService} from './getuserinfo.service'
 export class FormComponent implements OnInit {
   model!: NgbDateStruct; //for bootstrap datepicker
   username:string =""
+  userInfo:any = []
   userInfoService= new GetuserinfoService
   userInfoForm=new FormGroup({//reactive form
     name:new FormControl("",[Validators.required,Validators.pattern('[A-Za-z ]*')]),//only words with spaces
@@ -21,7 +22,9 @@ export class FormComponent implements OnInit {
     dateUpdate:new FormControl("")
   });
   sendData(){
-    return console.log(this.userInfoService.certificates)
+    this.userInfo.push(this.userInfoForm.value,this.userInfoService.certificates)
+    console.log(this.userInfo)
+    this.userInfoService.show()
   }
   get f(){
     return this.userInfoForm.controls//init the control to get their states

@@ -16,7 +16,7 @@ export class CertificacionesComponent implements OnInit {
   });
   pushCertificado():void{//when submit add a new certificate
     this.certificados.push(this.certificadosForm.value)
-    this.userInfoService.pushCert(this.certificadosForm.value)
+    this.userInfoService.pushCert(this.certificados)
   }
 
   deleteItem(item:any):void{//when press x key in the item card delete that item

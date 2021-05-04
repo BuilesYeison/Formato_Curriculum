@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators}from "@angular/forms"
+import {GetuserinfoService} from '../getuserinfo.service'
 
 @Component({
   selector: 'app-complementary',
@@ -8,6 +9,7 @@ import {FormGroup, FormControl, Validators}from "@angular/forms"
 })
 export class ComplementaryComponent implements OnInit {
   complementary:any=[]
+  getUserInfoService = new GetuserinfoService;
   complementaryForm = new FormGroup({
     place:new FormControl("", [Validators.required]),
     duration:new FormControl("", [Validators.required,Validators.pattern("[0-9]*")]),
@@ -16,6 +18,7 @@ export class ComplementaryComponent implements OnInit {
   });
   pushItem():void{
     this.complementary.push(this.complementaryForm.value);
+    this.getUserInfoService.pushComplementary(this.complementary)
   }
   deleteItem(item:any){
     for(let i = 0;i<this.complementary.length;i++){
